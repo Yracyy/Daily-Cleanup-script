@@ -75,7 +75,6 @@ It's intentionally **not** run with `-WindowStyle Hidden`. The console window po
 
 That's it — the task now runs every time the user logs on, under the SYSTEM account.
 
-**Note on `-WindowStyle Hidden`:** this is deliberately left out. The script runs in a visible console window on logon so the user can actually see it executing — a quick, tangible confirmation that their device just got cleaned, rather than a silent background task they have to trust is working. If you'd rather it run invisibly, just add `-WindowStyle Hidden` back into the `-Argument` string above.
 
 ## Logs
 
@@ -113,8 +112,6 @@ To fix this:
 5. Under **Power**, untick **"Start the task only if the computer is on AC power"**
 6. Click **OK**
 
-This is the #1 reason a scheduled task "just doesn't run" on laptops — worth checking first before assuming the script itself is broken.
-
 **The task ran but the log shows almost nothing was cleaned**
 
 Normal if you ran it recently or the caches are already small — check the summary lines at the bottom of the log (`Tracked freed` and `C: actual delta`) rather than individual step counts.
@@ -133,13 +130,6 @@ Unblock-File -Path "C:\Scripts\DailyCleanup.ps1"
 **Task shows as "Running" indefinitely / never completes**
 
 Check for a locked file causing a hang (rare, since all deletions use `-ErrorAction Stop` inside try/catch and skip on failure). If it's genuinely stuck, the `ExecutionTimeLimit` of 1 hour will force-stop it — you'll see an incomplete log for that day.
-
-**Windows.old notice keeps appearing in the log**
-
-This is intentional — the script will never auto-delete `C:\Windows.old` since it's your rollback safety net after a Windows upgrade. If you're confident you don't need to roll back, remove it manually:
-```powershell
-Remove-Item "C:\Windows.old" -Recurse -Force
-```
 
 ## License
 
