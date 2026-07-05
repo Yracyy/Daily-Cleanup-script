@@ -1,6 +1,6 @@
 # Daily Cleanup
 
-A fast Windows junk-file cleaner that runs automatically every time you log in — no Disk Cleanup, no DISM, no manual clicking.
+A fast Windows junk-file cleaner that runs automatically every time you log in.
 
 ## Why I built this
 
