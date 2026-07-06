@@ -96,7 +96,7 @@ $Config = @{
 
 **The task didn't run when I logged in (laptop users especially)**
 
-By default, Task Scheduler tasks created with `Register-ScheduledTask` have a condition that says *"Start the task only if the computer is on AC power"*. If your laptop is unplugged when you log in, the task silently skips itself — no error, no log, no console window, it just doesn't run.
+By default, Task Scheduler tasks created with `Register-ScheduledTask` have a condition that says *"Start the task only if the computer is on AC power"*. If your laptop is unplugged when you log in, the task silently skips itself.
 
 To fix this:
 1. Open **Task Scheduler** (`taskschd.msc`)
