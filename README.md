@@ -2,10 +2,6 @@
 
 A fast Windows junk-file cleaner that runs automatically every time you log in.
 
-## Why I built this
-
-Built-in tools like Disk Cleanup (`cleanmgr.exe`) are slow, require interaction, and don't cover things like browser caches, Teams cache, or crash dumps. I wanted something that runs automatically at logon as SYSTEM, logs exactly what it did, and never touches anything that could break an app or lose personal files.
-
 ## What it cleans
 
 | # | Category |
